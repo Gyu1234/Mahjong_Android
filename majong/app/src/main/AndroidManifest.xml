@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kr.ac.mjc.majang">
+
+    <application
+        android:allowBackup="true"
+        android:label="Mahjong Score App"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- 1. 앱 시작(런처) 액티비티, 반드시 exported="true" -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 2. 조건 입력 화면 -->
+        <activity
+            android:name=".ConditionActivity"
+            android:exported="false" />
+
+        <!-- 3. 점수 출력 화면 -->
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
