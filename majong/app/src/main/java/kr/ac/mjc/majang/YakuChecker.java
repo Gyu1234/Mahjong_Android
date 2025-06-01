@@ -137,27 +137,73 @@ public class YakuChecker {
         if (!hand.isMenzen) return false;
         Map<String, Integer> map = new HashMap<>();
         for (String t : hand.tiles) map.put(t, map.getOrDefault(t, 0) + 1);
-        int pair = 0;
-        for (int v : map.values()) if (v == 2) pair++;
-        return pair == 7;
+        if (map.size() != 7) return false; // 7쌍이어야 함
+        for (int v : map.values()) {
+            if (v != 2) return false;
+        }
+        return true;
     }
+
 
     // 량페코(멘젠 한정, 자패 포함 시 무효!)
     public static boolean isRyanpeko(HandState hand) {
         if (!hand.isMenzen) return false;
 
-        // 자패 포함 시 무효
-        for (String t : hand.tiles) {
-            if (isHonor(t)) return false;
-        }
+        // 자패 있으면 무효
+        for (String t : hand.tiles) if (isHonor(t)) return false;
 
-        // 숫자패 7쌍 이상에서만 성립 가능(엄밀한 멘츠 분해는 생략, 실전은 라이브러리 써야 정확)
-        Map<String, Integer> map = new HashMap<>();
-        for (String t : hand.tiles) map.put(t, map.getOrDefault(t, 0) + 1);
-        int pairCount = 0;
-        for (int v : map.values()) if (v == 2) pairCount++;
-        return pairCount >= 4;
+        // 카운트맵 생성
+        Map<String, Integer> counts = new HashMap<>();
+        for (String t : hand.tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
+
+        // 모든 2장 이상 패를 헤드(짝패)로 잡고 나머지 멘츠 분해 시도
+        for (String pair : counts.keySet()) {
+            if (counts.get(pair) >= 2) {
+                Map<String, Integer> pool = new HashMap<>(counts);
+                pool.put(pair, pool.get(pair) - 2);
+
+                List<String> melds = new ArrayList<>();
+                if (ryanpekoMeldSearch(pool, 4, melds)) {
+                    // 만들어진 멘츠 리스트에서 동일 슌츠가 2쌍씩 2종류 이상 있으면 true
+                    Map<String, Integer> meldCount = new HashMap<>();
+                    for (String meld : melds) meldCount.put(meld, meldCount.getOrDefault(meld, 0) + 1);
+                    int pairMelds = 0;
+                    for (int v : meldCount.values()) if (v >= 2) pairMelds++;
+                    if (pairMelds >= 2) return true;
+                }
+            }
+        }
+        return false;
     }
+
+    // 슌츠만 허용하는 멘츠 분해, 만들어진 슌츠를 melds에 추가
+    private static boolean ryanpekoMeldSearch(Map<String, Integer> pool, int left, List<String> melds) {
+        if (left == 0) {
+            int sum = 0;
+            for (int v : pool.values()) sum += v;
+            return sum == 0;
+        }
+        for (String suit : Arrays.asList("m", "p", "s")) {
+            for (int i = 1; i <= 7; i++) {
+                String a = i + suit, b = (i+1) + suit, c = (i+2) + suit;
+                if (pool.getOrDefault(a, 0) > 0 && pool.getOrDefault(b, 0) > 0 && pool.getOrDefault(c, 0) > 0) {
+                    Map<String, Integer> tmp = new HashMap<>(pool);
+                    tmp.put(a, tmp.get(a) - 1);
+                    tmp.put(b, tmp.get(b) - 1);
+                    tmp.put(c, tmp.get(c) - 1);
+                    List<String> nextMelds = new ArrayList<>(melds);
+                    nextMelds.add(a + b + c); // 멘츠(예: "1m2m3m") 형태로 기록
+                    if (ryanpekoMeldSearch(tmp, left - 1, nextMelds)) {
+                        melds.clear();
+                        melds.addAll(nextMelds);
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
 
     // 삼색동순(멘젠 2판, 후로 1판)
     public static boolean isSanshokuDoujun(HandState hand) {
