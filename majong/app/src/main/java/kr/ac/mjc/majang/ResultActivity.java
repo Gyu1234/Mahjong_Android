@@ -55,11 +55,21 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        // -------------------------
+        // 돌아가기(메인으로) 버튼 처리
+        // -------------------------
+        Button buttonBack = findViewById(R.id.button_back);
+        buttonBack.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        });
+
         // 결과 UI 요소 찾기
         TextView textScore = findViewById(R.id.text_score);
         TextView textYaku = findViewById(R.id.text_yaku);
         TextView textGrade = findViewById(R.id.text_score_grade);
-        Button buttonBack = findViewById(R.id.button_back);
         LinearLayout row1 = findViewById(R.id.hand_container_row1);
         LinearLayout row2 = findViewById(R.id.hand_container_row2);
 
@@ -126,14 +136,7 @@ public class ResultActivity extends Activity {
             textGrade.setText("등급: " + gradeString);
         }
 
-        // -------------------------
-        // 돌아가기(메인으로) 버튼 처리
-        // -------------------------
-        buttonBack.setOnClickListener(v -> {
-            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            startActivity(intent);
-            finish();
-        });
+
+
     }
 }
