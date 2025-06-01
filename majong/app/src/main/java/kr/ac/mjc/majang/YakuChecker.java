@@ -30,6 +30,7 @@ public class YakuChecker {
         if (hand.isMenzen) {
             if (isRiichi(hand)) yaku.add(new YakuResult("리치", 1));
             if (isPinfu(hand)) yaku.add(new YakuResult("핑후", 1));
+            if (isIppatsu(hand)) yaku.add(new YakuResult("일발", 1));
             if (isChitoitsu(hand)) yaku.add(new YakuResult("치또이", 2));
             if (isRyanpeko(hand)) yaku.add(new YakuResult("량페코", 3));
         }
@@ -59,10 +60,83 @@ public class YakuChecker {
         return hand.isMenzen;
     }
 
-    // 핑후(멘젠 한정, 실제론 복잡하지만 간단 예시)
-    public static boolean isPinfu(HandState hand) {
-        return hand.isMenzen;
+    // 일발(멘젠 한정)
+    public static boolean isIppatsu(HandState hand) {
+        // (1) isIppatsu 필드가 있으면
+        // return hand.isIppatsu;
+
+        // (2) yakuList에 "일발"이 포함되어 있으면
+        return hand.yakuList != null && hand.yakuList.contains("일발");
     }
+
+
+    // 핑후(멘젠 한정, 모든 멘츠가 슌츠, 헤드는 역패/자패 아님, 양면 대기)
+    public static boolean isPinfu(HandState hand) {
+        // 1. 멘젠 아니면 무조건 불가
+        if (!hand.isMenzen) return false;
+        List<String> tiles = hand.tiles;
+        if (tiles == null || tiles.size() != 14) return false;
+
+        // 2. 멘츠 분해 (여기선 간단히 순차적으로 4셋+1쌍 조합 찾기)
+        // 모든 3개 조합이 슌츠(차/순자)인지 체크
+        Map<String, Integer> counts = new HashMap<>();
+        for (String t : tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
+
+        // (1) 모든 조합 중에서 1쌍(또이츠) & 나머지는 모두 슌츠로 분해되는지 체크
+        // (이 부분이 마작 AI/계산기의 본질, 여기선 단순화: 자주 쓰는 정석 로직 차용)
+        List<String> pairs = new ArrayList<>();
+        for (Map.Entry<String, Integer> e : counts.entrySet()) {
+            if (e.getValue() >= 2) pairs.add(e.getKey());
+        }
+
+        // 핑후는 반드시 또이츠가 1개만 존재해야 함
+        boolean validPinfu = false;
+        for (String pair : pairs) {
+            // 2개 빼고 나머지로 멘츠 분해(3개씩 4조)
+            Map<String, Integer> tempCounts = new HashMap<>(counts);
+            tempCounts.put(pair, tempCounts.get(pair) - 2);
+
+            List<List<String>> melds = new ArrayList<>();
+            int meldCount = 0;
+            // 4조 멘츠(슈운츠) 분해 시도
+            while (meldCount < 4) {
+                boolean found = false;
+                // 슌츠(차)만 허용: nX, n+1X, n+2X
+                for (char suit : new char[]{'m', 'p', 's'}) {
+                    for (int n = 1; n <= 7; n++) {
+                        String a = n + String.valueOf(suit);
+                        String b = (n+1) + String.valueOf(suit);
+                        String c = (n+2) + String.valueOf(suit);
+                        if (tempCounts.getOrDefault(a,0) >= 1 &&
+                                tempCounts.getOrDefault(b,0) >= 1 &&
+                                tempCounts.getOrDefault(c,0) >= 1) {
+                            // 멘츠 발견 → 빼기
+                            tempCounts.put(a, tempCounts.get(a)-1);
+                            tempCounts.put(b, tempCounts.get(b)-1);
+                            tempCounts.put(c, tempCounts.get(c)-1);
+                            melds.add(Arrays.asList(a,b,c));
+                            found = true;
+                            meldCount++;
+                            break;
+                        }
+                    }
+                    if (found) break;
+                }
+                if (!found) break;
+            }
+            // 네 개 모두 슌츠로 분해됐으면
+            if (meldCount == 4) {
+                // 3. 헤드가 역패/자패(z1~z7)가 아닌가? (단순히 z로 시작)
+                if (pair.startsWith("z")) continue;
+                // 4. 대기가 양면 대기(이 부분은 hand에 winTile 등 추가 정보 있어야 완벽히 구현 가능, 여기선 스킵)
+                // 실제 게임에선 승패타 정보(winning tile, winTile)가 꼭 필요함
+                validPinfu = true;
+                break;
+            }
+        }
+        return validPinfu;
+    }
+
 
     // 치또이(멘젠 한정, 7쌍)
     public static boolean isChitoitsu(HandState hand) {

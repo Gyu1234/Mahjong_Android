@@ -53,7 +53,9 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="선택된 패: "
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:visibility="gone" /> <!-- 기본적으로 숨김 처리 -->
+        />
 
     <LinearLayout
         android:id="@+id/tileGrid"

@@ -12,8 +12,10 @@ public class ConditionActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_condition);
 
+        // 선택된 패 리스트 받기
         ArrayList<String> tiles = getIntent().getStringArrayListExtra("tiles");
 
+        // UI 컴포넌트 연결
         CheckBox checkFuro = findViewById(R.id.checkFuro);
         RadioGroup radioGroupWinType = findViewById(R.id.radioGroupWinType);
         Switch switchDealer = findViewById(R.id.switchDealer);
@@ -26,6 +28,23 @@ public class ConditionActivity extends Activity {
         Button btnCalculate = findViewById(R.id.btnCalculate);
 
         btnCalculate.setOnClickListener(v -> {
+            // ★ 조건 선택 체크 (최소 한 개 이상)
+            boolean isAnyCondition =
+                    checkFuro.isChecked()
+                            || radioGroupWinType.getCheckedRadioButtonId() != -1
+                            || switchDealer.isChecked()
+                            || !editDora.getText().toString().trim().isEmpty()
+                            || !editFu.getText().toString().trim().isEmpty()
+                            || checkRiichi.isChecked()
+                            || checkIppatsu.isChecked()
+                            || checkHaitei.isChecked();
+
+            if (!isAnyCondition) {
+                Toast.makeText(this, "조건을 한 개 이상 선택하거나 입력하세요.", Toast.LENGTH_SHORT).show();
+                return; // ResultActivity로 이동하지 않음
+            }
+
+            // HandState 객체 생성 및 값 채우기
             HandState hand = new HandState();
             hand.tiles = tiles;
             hand.isFuro = checkFuro.isChecked();
@@ -42,12 +61,14 @@ public class ConditionActivity extends Activity {
             if (checkIppatsu.isChecked()) hand.yakuList.add("일발");
             if (checkHaitei.isChecked()) hand.yakuList.add("하저로어");
 
+            // ResultActivity로 이동 (핸드 데이터 전달)
             Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("hand", hand);
             startActivity(intent);
         });
     }
 
+    // 문자열 -> int 변환 유틸 (실패시 def 반환)
     private int getInt(EditText edit, int def) {
         try {
             return Integer.parseInt(edit.getText().toString().trim());
