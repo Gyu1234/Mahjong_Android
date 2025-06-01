@@ -3399,7 +3399,6 @@ int id ifRoom 0x7f0800f7
 int id ignore 0x7f0800f8
 int id ignoreRequest 0x7f0800f9
 int id image 0x7f0800fa
-int id imageButtonHome 0x7f0800fb
 int id immediateStop 0x7f0800fc
 int id included 0x7f0800fd
 int id indeterminate 0x7f0800fe

@@ -1,330 +1,338 @@
 [
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s4.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s4.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxhdpi_majong_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxhdpi\\majong_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z2.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z2.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_tile_9m.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\tile_9m.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-anydpi-v26_majong_launcher_round.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-anydpi-v26/majong_launcher_round.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxxhdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxxhdpi/ic_launcher_foreground_majong_ozisan.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z4.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z4.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m7.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m7.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m9.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m9.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t9.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t9.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-mdpi_majong_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-mdpi\\majong_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxxhdpi_majong_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxxhdpi\\majong_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-anydpi-v26_majong_launcher_round.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-anydpi-v26\\majong_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s2.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s2.png"
     },
     {
         "merged": "kr.ac.mjc.majang.app-debug-32:/layout_activity_condition.xml.flat",
         "source": "kr.ac.mjc.majang.app-main-34:/layout/activity_condition.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s8.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s8.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_majong_launcher_background.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\majong_launcher_background.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxxhdpi_majong_launcher_foreground.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxxhdpi/majong_launcher_foreground.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xhdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xhdpi\\ic_launcher_foreground_majong_ozisan.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z5.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z5.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m2.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m2.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_tile_9m.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/tile_9m.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t1.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t1.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s6.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s6.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t6.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t6.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m4.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m4.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s9.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s9.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z3.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z3.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-mdpi_majong_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-mdpi\\majong_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m8.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m8.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m5.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m5.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s3.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s3.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-mdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-mdpi\\ic_launcher_foreground_majong_ozisan.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_majanojisan.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\majanojisan.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t7.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t7.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t8.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t8.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z1.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z1.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s5.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s5.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_home_btn.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\home_btn.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-mdpi_majong_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-mdpi\\majong_launcher_foreground.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m1.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m1.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxhdpi_majong_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxhdpi/majong_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t4.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t4.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_home_btn.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/home_btn.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-hdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-hdpi/ic_launcher_foreground_majong_ozisan.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s1.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s1.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-hdpi_majong_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-hdpi/majong_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxhdpi_majong_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxhdpi\\majong_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-mdpi_majong_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-mdpi/majong_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s8.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s8.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxxhdpi_majong_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxxhdpi/majong_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m8.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m8.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t2.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t2.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_back.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/back.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t1.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t1.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t5.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t5.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z5.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z5.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxhdpi_majong_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxhdpi\\majong_launcher_foreground.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_ic_launcher_background.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m4.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m4.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m5.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m5.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m1.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m1.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s9.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s9.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xhdpi_majong_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xhdpi\\majong_launcher_foreground.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z6.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z6.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s5.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s5.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xhdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xhdpi/ic_launcher_foreground_majong_ozisan.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\layout_activity_result.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\layout\\activity_result.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-hdpi_majong_launcher_foreground.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-hdpi/majong_launcher_foreground.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t8.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t8.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-hdpi_majong_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-hdpi\\majong_launcher_foreground.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t7.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t7.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxxhdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxxhdpi\\ic_launcher_foreground_majong_ozisan.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z4.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z4.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-hdpi_majong_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-hdpi\\majong_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m9.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m9.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z2.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z2.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-mdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-mdpi/ic_launcher_foreground_majong_ozisan.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m7.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m7.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_tile_east.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/tile_east.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s2.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s2.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/xml_backup_rules.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xhdpi_majong_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xhdpi\\majong_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s6.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s6.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t5.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t5.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxxhdpi_majong_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxxhdpi\\majong_launcher_foreground.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m2.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m2.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_back.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\back.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t2.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t2.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t3.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t3.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xhdpi_majong_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xhdpi\\majong_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-anydpi-v26_majong_launcher.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-anydpi-v26/majong_launcher.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m3.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m3.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_majong_launcher_background.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/majong_launcher_background.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z6.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z6.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z7.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z7.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t9.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t9.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxhdpi_majong_launcher_foreground.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxhdpi/majong_launcher_foreground.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-hdpi_majong_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-hdpi\\majong_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/layout_activity_result.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/layout/activity_result.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s4.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s4.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xhdpi_majong_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xhdpi/majong_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-anydpi-v26_majong_launcher.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-anydpi-v26\\majong_launcher.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/xml_data_extraction_rules.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxxhdpi_majong_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxxhdpi\\majong_launcher.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_tile_1m.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/tile_1m.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-mdpi_majong_launcher_foreground.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-mdpi/majong_launcher_foreground.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_m6.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\m6.png"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z3.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z3.png"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s3.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s3.png"
+    },
+    {
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t6.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t6.png"
     },
     {
         "merged": "kr.ac.mjc.majang.app-debug-32:/layout_activity_main.xml.flat",
         "source": "kr.ac.mjc.majang.app-main-34:/layout/activity_main.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m6.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m6.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\layout\\activity_main.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\layout_activity_condition.xml.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\layout\\activity_condition.xml"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_t4.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/t4.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-xxhdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-xxhdpi\\ic_launcher_foreground_majong_ozisan.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_majanojisan.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/majanojisan.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_s7.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\s7.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxxhdpi_majong_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxxhdpi/majong_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_t3.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\t3.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s1.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s1.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_tile_1m.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\tile_1m.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xhdpi_majong_launcher_foreground.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xhdpi/majong_launcher_foreground.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-hdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-hdpi\\ic_launcher_foreground_majong_ozisan.webp"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_tile_east.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\tile_east.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxhdpi_majong_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxhdpi/majong_launcher.webp"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\drawable_z7.png.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\drawable\\z7.png"
     },
     {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-hdpi_majong_launcher.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-hdpi/majong_launcher.webp"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_s7.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/s7.png"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-mdpi_majong_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-mdpi/majong_launcher_round.webp"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_m3.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/m3.png"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xxhdpi_ic_launcher_foreground_majong_ozisan.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xxhdpi/ic_launcher_foreground_majong_ozisan.webp"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/mipmap-xhdpi_majong_launcher_round.webp.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/mipmap-xhdpi/majong_launcher_round.webp"
-    },
-    {
-        "merged": "kr.ac.mjc.majang.app-debug-32:/drawable_z1.png.flat",
-        "source": "kr.ac.mjc.majang.app-main-34:/drawable/z1.png"
+        "merged": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-debug-32:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\dlrbg\\.gradle\\daemon\\8.10.2\\kr.ac.mjc.majang.app-main-34:\\mipmap-hdpi\\ic_launcher.webp"
     }
 ]

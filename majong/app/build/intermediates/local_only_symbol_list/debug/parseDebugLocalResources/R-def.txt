@@ -71,7 +71,6 @@ id editFu
 id hand_container_row1
 id hand_container_row2
 id headerBar
-id imageButtonHome
 id linearDoraFu
 id linearYakuCheck
 id m1

@@ -30,13 +30,6 @@
             android:textColor="#21C545"
             android:textSize="20sp" />
 
-        <ImageButton
-            android:id="@+id/imageButtonHome"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@android:color/transparent"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/home_btn" />
     </LinearLayout>
 
     <!-- 오야 스위치 -->
