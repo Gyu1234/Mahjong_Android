@@ -43,12 +43,12 @@ public class YakuChecker {
         if (isChinitsu(hand)) yaku.add(new YakuResult("청일색", hand.isMenzen ? 6 : 5));
         if (isHonitsu(hand)) yaku.add(new YakuResult("혼일색", hand.isMenzen ? 3 : 2));
         if (isHonroutou(hand)) yaku.add(new YakuResult("혼노두", 2)); // 멘젠/후로 구분 없음
-        if (isTanyao(hand)) yaku.add(new YakuResult("탕야오", 1));    // 무조건 1판
 
         // === 후로도 무조건 1판 유지 ===
         if (isYakuhai(hand)) yaku.add(new YakuResult("역패", 1));
         if (isSanshokuDokko(hand)) yaku.add(new YakuResult("삼색동각", 2));
         if (isShousangen(hand)) yaku.add(new YakuResult("소삼원", 2));
+        if (isTanyao(hand)) yaku.add(new YakuResult("탕야오", 1));
 
         return yaku;
     }
@@ -196,32 +196,54 @@ public class YakuChecker {
         return false;
     }
 
-    // 준찬타(멘젠 2판, 후로 1판)
+    // 자패 판정
+    private static boolean isHonor(String t) {
+        // 실제 네가 쓰는 자패 문자열에 맞게 바꿔야 함
+        return t.equals("E") || t.equals("S") || t.equals("W") || t.equals("N")
+                || t.equals("P") || t.equals("F") || t.equals("C");
+    }
+
+    // 준찬타 (멘츠 무시, 패 전체로만 판단, 엄밀하지 않음)
     public static boolean isJunchan(HandState hand) {
         for (String t : hand.tiles) {
             if (t.endsWith("m") || t.endsWith("p") || t.endsWith("s")) {
                 char num = t.charAt(0);
                 if (num != '1' && num != '9') return false;
             } else {
+                // 자패 포함시 불가 (준찬타는 숫자패만)
                 return false;
             }
         }
         return true;
     }
 
-    // 찬타(멘젠 2판, 후로 1판)
+    // 찬타 (멘츠 무시, 패 전체로만 판단, 엄밀하지 않음)
     public static boolean isChanta(HandState hand) {
         boolean hasYaochu = false;
         for (String t : hand.tiles) {
             if (t.endsWith("m") || t.endsWith("p") || t.endsWith("s")) {
                 char num = t.charAt(0);
-                if (num == '1' || num == '9') hasYaochu = true;
-            } else {
+                if (num == '1' || num == '9') {
+                    hasYaochu = true;
+                }
+            } else if (isHonor(t)) {
                 hasYaochu = true;
             }
         }
-        return hasYaochu;
+        // 1,9,자패가 하나도 없으면 불가
+        if (!hasYaochu) return false;
+        // 패 전체에서 2~8만(자패X, 1·9X)이 3장 이상이면 찬타 불가(완화 버전)
+        int middleTileCount = 0;
+        for (String t : hand.tiles) {
+            if (t.endsWith("m") || t.endsWith("p") || t.endsWith("s")) {
+                char num = t.charAt(0);
+                if (num >= '2' && num <= '8') middleTileCount++;
+            }
+        }
+        if (middleTileCount >= 3) return false;
+        return true;
     }
+
 
     // 청일색(멘젠 6판, 후로 5판)
     public static boolean isChinitsu(HandState hand) {
