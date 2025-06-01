@@ -18,14 +18,38 @@ public class ConditionActivity extends Activity {
         // UI 컴포넌트 연결
         CheckBox checkFuro = findViewById(R.id.checkFuro);
         RadioGroup radioGroupWinType = findViewById(R.id.radioGroupWinType);
-        Switch switchDealer = findViewById(R.id.switchDealer);
+        RadioButton radioTsumo = findViewById(R.id.radioTsumo);
+        Switch switchDealer = findViewById(R.id.switchDealer); //오야 선택
         EditText editDora = findViewById(R.id.editDora);
         EditText editFu = findViewById(R.id.editFu);
+
+        // 역 체크박스
         CheckBox checkRiichi = findViewById(R.id.checkRiichi);
         CheckBox checkIppatsu = findViewById(R.id.checkIppatsu);
         CheckBox checkHaitei = findViewById(R.id.checkHaitei);
 
         Button btnCalculate = findViewById(R.id.btnCalculate);
+
+        // ---- [추가] 일발/하저로어 배열로 관리 ----
+        CheckBox[] yakuChecks = { checkIppatsu, checkHaitei };
+
+        // ---- [핵심!] 리치/쯔모 활성화 연동 ----
+        Runnable updateYakuEnable = () -> {
+            boolean enable = checkRiichi.isChecked() || radioTsumo.isChecked();
+            for (CheckBox yakuCheck : yakuChecks) {
+                yakuCheck.setEnabled(enable);
+                if (!enable) yakuCheck.setChecked(false); // 비활성화시 체크 해제
+            }
+        };
+
+        // 리치 체크 변화 리스너
+        checkRiichi.setOnCheckedChangeListener((buttonView, isChecked) -> updateYakuEnable.run());
+
+        // 쯔모 라디오 선택 리스너
+        radioGroupWinType.setOnCheckedChangeListener((group, checkedId) -> updateYakuEnable.run());
+
+        // 최초 진입시에도 상태 동기화
+        updateYakuEnable.run();
 
         btnCalculate.setOnClickListener(v -> {
             // ★ 조건 선택 체크 (최소 한 개 이상)
@@ -51,7 +75,7 @@ public class ConditionActivity extends Activity {
             hand.isMenzen = !checkFuro.isChecked(); // 오픈(후로)이면 멘젠 false
 
             int selectedId = radioGroupWinType.getCheckedRadioButtonId();
-            hand.isTsumo = selectedId == R.id.radioTsumo;
+            hand.isTsumo = (selectedId == R.id.radioTsumo);
             hand.isDealer = switchDealer.isChecked();
             hand.dora = getInt(editDora, 0);
             hand.fu = getInt(editFu, 20);
@@ -60,6 +84,7 @@ public class ConditionActivity extends Activity {
             if (checkRiichi.isChecked()) hand.yakuList.add("리치");
             if (checkIppatsu.isChecked()) hand.yakuList.add("일발");
             if (checkHaitei.isChecked()) hand.yakuList.add("하저로어");
+            // 추가 역이 있다면 여기에 계속...
 
             // ResultActivity로 이동 (핸드 데이터 전달)
             Intent intent = new Intent(this, ResultActivity.class);

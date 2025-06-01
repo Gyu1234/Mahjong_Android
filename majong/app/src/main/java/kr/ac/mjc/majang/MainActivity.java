@@ -46,8 +46,20 @@ public class MainActivity extends Activity {
             ImageButton tileBtn = findViewById(id);
             if (tileBtn != null) {
                 tileBtn.setOnClickListener(v -> {
+                    String tileCode = tileMap.get(id);
+
+                    // [추가] 이미 선택된 tile 개수 체크
+                    int count = 0;
+                    for (String t : selectedTiles) {
+                        if (t.equals(tileCode)) count++;
+                    }
+                    if (count >= 4) {
+                        Toast.makeText(this, "한 종류의 타일은 최대 4장까지만 선택 가능합니다.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     if (selectedTiles.size() < tileButtonCount) {
-                        selectedTiles.add(tileMap.get(id));
+                        selectedTiles.add(tileCode);
                         tileButtons[selectedTiles.size() - 1].setImageDrawable(tileBtn.getDrawable());
                         updateDisplay(tileDisplay);
                     } else {

@@ -10,8 +10,6 @@ public class ResultActivity extends Activity {
 
     // 수패/자패 문자열 → 이미지 리소스 id 매핑 함수
     private int getTileDrawableRes(String tile) {
-
-        // 만수(m), 통수(p), 삭수(s)
         switch(tile) {
             case "1m": return R.drawable.m1;
             case "2m": return R.drawable.m2;
@@ -40,8 +38,7 @@ public class ResultActivity extends Activity {
             case "7s": return R.drawable.s7;
             case "8s": return R.drawable.s8;
             case "9s": return R.drawable.s9;
-
-            // 자패(동, 남, 서, 북, 백, 발, 중) MainActivity와 완전히 동일하게 매핑
+            // 자패(동, 남, 서, 북, 백, 발, 중)
             case "E": return R.drawable.z1; // 동
             case "S": return R.drawable.z2; // 남
             case "W": return R.drawable.z3; // 서
@@ -50,7 +47,7 @@ public class ResultActivity extends Activity {
             case "F": return R.drawable.z6; // 발(초록)
             case "C": return R.drawable.z7; // 중(빨강)
         }
-        return R.drawable.back; // 기본값(에러 방지)
+        return R.drawable.back; // 예외처리: 알 수 없는 타일은 뒷면
     }
 
     @Override
@@ -58,71 +55,80 @@ public class ResultActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        // 결과 UI 요소 가져오기
+        // 결과 UI 요소 찾기
         TextView textScore = findViewById(R.id.text_score);
         TextView textYaku = findViewById(R.id.text_yaku);
         TextView textGrade = findViewById(R.id.text_score_grade);
         Button buttonBack = findViewById(R.id.button_back);
-
-        // 두 줄로 패를 보여줄 LinearLayout
         LinearLayout row1 = findViewById(R.id.hand_container_row1);
         LinearLayout row2 = findViewById(R.id.hand_container_row2);
 
-        // Intent에서 HandState 객체 받아오기
+        // 인텐트로부터 HandState 객체 받아오기
         HandState hand = (HandState) getIntent().getSerializableExtra("hand");
 
-        // 패 리스트 가져오기
+        // 패 리스트 가져오기 (null 방지)
         List<String> tiles = (hand != null && hand.tiles != null) ? hand.tiles : new ArrayList<>();
 
-        // 기존 뷰 초기화 (안하면 이전 화면에 남는 현상 방지)
+        // 기존 뷰 초기화(패 남는 버그 방지)
         row1.removeAllViews();
         row2.removeAllViews();
 
-        // 1~7번(0~6)은 row1, 8~14번(7~13)은 row2에 ImageView로 출력
+        // 0~6번 패는 row1, 7~13번 패는 row2에 표시
         for (int i = 0; i < tiles.size(); i++) {
             ImageView iv = new ImageView(this);
-            // 패 이미지 크기 (원하는 대로 조정)
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(80, 120);
             lp.setMargins(4, 0, 4, 0);
             iv.setLayoutParams(lp);
             iv.setImageResource(getTileDrawableRes(tiles.get(i)));
-
-            // 0~6: 첫 번째 줄, 7~13: 두 번째 줄
-            if (i < 7) {
-                row1.addView(iv);
-            } else {
-                row2.addView(iv);
-            }
+            if (i < 7) row1.addView(iv);
+            else row2.addView(iv);
         }
 
+        // -------------------------
         // 점수/역/등급 계산 및 출력
-        List<String> yakumanList = YakumanChecker.getYakumanList(tiles, null);
+        // -------------------------
 
+        // 1. 역만(야쿠만) 판정부터 우선
+
+        List<String> yakumanList = YakumanChecker.getYakumanList(tiles, null, hand != null && hand.isMenzen);
         if (yakumanList != null && !yakumanList.isEmpty()) {
-            // 역만(야쿠만)일 때 점수/등급 고정
-            int yakumanScore = (hand != null && hand.isDealer) ? 48000 : 32000;
+            // 역만 핸드인 경우
+            int baseScore = (hand != null && hand.isDealer) ? 48000 : 32000; // <== 이 한 줄 추가!
+            int yakumanScore = baseScore * yakumanList.size();
             String oyaString = (hand != null && hand.isDealer) ? " (오야)" : "";
             textScore.setText("점수: " + yakumanScore + oyaString);
             textYaku.setText("역: " + String.join(", ", yakumanList));
-            textGrade.setText("등급: 역만");
-        } else {
-            // 일반 패 점수/역 계산
+            textGrade.setText("등급: " + (yakumanList.size() == 1 ? "역만" : yakumanList.size() + "배 역만"));
+            return;
+        }
+
+
+        else {
+            // 2. 일반 패는 점수/역 계산 결과 사용
             MahjongScoreCalculator.Result result = MahjongScoreCalculator.calculate(hand);
             String oyaString = (hand != null && hand.isDealer) ? " (오야)" : "";
             textScore.setText("점수: " + result.totalScore + oyaString);
 
-            List<String> yakuList = result.yakuList;
-            String yakuText = (yakuList == null || yakuList.isEmpty())
-                    ? "역: 없음"
-                    : "역: " + String.join(", ", yakuList);
+            List<String> yakuList = (result.yakuList != null) ? result.yakuList : new ArrayList<>();
+
+            // === '역 없음' 처리 추가 ===
+            String yakuText;
+            if (yakuList.isEmpty()) {
+                yakuText = "역: 없음";   // 역 없음 출력
+            } else {
+                yakuText = "역: " + String.join(", ", yakuList);
+            }
             textYaku.setText(yakuText);
 
-            String gradeString = result.scoreGrade;
-            if (gradeString == null || gradeString.isEmpty()) gradeString = "일반";
+            // 등급도 마찬가지로 비어 있으면 '일반' 표시
+            String gradeString = (result.scoreGrade != null && !result.scoreGrade.isEmpty()) ?
+                    result.scoreGrade : "일반";
             textGrade.setText("등급: " + gradeString);
         }
 
-        // 뒤로가기(메인화면으로) 버튼 처리
+        // -------------------------
+        // 돌아가기(메인으로) 버튼 처리
+        // -------------------------
         buttonBack.setOnClickListener(v -> {
             Intent intent = new Intent(ResultActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);

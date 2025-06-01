@@ -13,5 +13,7 @@ public class HandState implements Serializable {
     public boolean isFuro = false;     // 오픈 멘츠(후로) 여부
     public boolean isMenzen = true;    // 멘젠(오픈 안됨) 여부
 
+    public String winTile;   // 승리 타일 (없으면 null)
+
     // 생성자 등 필요시 추가
 }
