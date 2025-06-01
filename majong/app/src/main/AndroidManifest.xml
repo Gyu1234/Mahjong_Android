@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="Mahjong Score App"
+        android:label="마작 점수 계산기"
         android:icon="@mipmap/ic_launcher_foreground_majong_ozisan"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
