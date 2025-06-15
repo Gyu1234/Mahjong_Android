@@ -60,6 +60,9 @@ public class YakuChecker {
         if (isSanshokuDokko(hand)) yaku.add(new YakuResult("삼색동각", 2));
         if (isShousangen(hand)) yaku.add(new YakuResult("소삼원", 2));
         if (isTanyao(hand)) yaku.add(new YakuResult("탕야오", 1));
+        if (isToitoi(hand)) {yaku.add(new YakuResult("또이또이",1));
+        }
+
 
         return yaku;
     }
@@ -424,6 +427,33 @@ public class YakuChecker {
         }
         return false;
     }
+
+    // 또이또이(무조건 2판)
+    public static boolean isToitoi(HandState hand) {
+        Map<String, Integer> count = new HashMap<>();
+
+        for (String t : hand.tiles) {
+            count.put(t, count.getOrDefault(t, 0) + 1);
+        }
+
+        int pair = 0;
+        int set = 0;
+
+        for (int c : count.values()) {
+            if (c == 2) {
+                pair++;
+            } else if (c == 3 || c == 4) {
+                set++;
+            } else {
+                // 셋트로 만들 수 없는 패가 있다면 또이또이 아님
+                return false;
+            }
+        }
+
+        // 1쌍 + 4셋트일 때만 인정
+        return pair == 1 && set == 4;
+    }
+
 
     // 역패(무조건 1판, 자패 3개 이상)
     public static boolean isYakuhai(HandState hand) {
