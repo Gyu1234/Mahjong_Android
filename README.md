@@ -40,5 +40,5 @@ Android Studio 환경에서 **Java**로 구현한 **마작 점수 계산기 앱*
 ## 📦 설치 및 실행 / インストールと実行
 1. 저장소 클론 / リポジトリをクローン:
    ```bash
-   git clone https://github.com/Gyu1234/Mahjong_Android.git
+   git clone https://github.com/Gyu1234/Mahjong_Android_Calculator.git
 
