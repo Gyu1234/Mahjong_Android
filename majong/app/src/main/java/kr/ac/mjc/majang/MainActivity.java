@@ -96,3 +96,5 @@ public class MainActivity extends Activity {
         tileDisplay.setText("선택된 패: " + String.join(" ", selectedTiles));
     }
 }
+
+//git route test
