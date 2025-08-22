@@ -19,13 +19,17 @@ public class YakuChecker {
     public static List<YakuResult> getYakuList(HandState hand) {
         List<YakuResult> yaku = new ArrayList<>();
 
-        // [1] 치또이/량페코(배타, 큰 쪽 우선)
+        // [1] 치또이/량페코/이페코 (배타, 큰 쪽 우선)
         boolean chitoitsu = isChitoitsu(hand);
         boolean ryanpeko = isRyanpeko(hand);
+        boolean iipeikou = isIipeikou(hand);
+
         if (ryanpeko) {
             yaku.add(new YakuResult("량페코", 3));
         } else if (chitoitsu) {
             yaku.add(new YakuResult("치또이", 2));
+        } else if (iipeikou) {
+            yaku.add(new YakuResult("이페코", 1));
         }
 
         // [2] 혼노두/준찬타/찬타(배타, 큰 쪽 우선)
@@ -41,14 +45,13 @@ public class YakuChecker {
             yaku.add(new YakuResult("찬타", chantaHan));
         }
 
-
-
-        // [3] 멘젠 한정
+        // [3] 멘젠 한정 (일배고 제외 - 위에서 이미 처리됨)
         if (hand.isMenzen) {
             if (isRiichi(hand)) yaku.add(new YakuResult("리치", 1));
             if (isPinfu(hand)) yaku.add(new YakuResult("핑후", 1));
             if (isTsumo(hand)) yaku.add(new YakuResult("쯔모", 1));
             if (isIppatsu(hand)) yaku.add(new YakuResult("일발", 1));
+            if (isDoubleRiichi(hand)) yaku.add(new YakuResult("더블리치", 2));
         }
 
         // [4] 기타 중복 허용 역
@@ -60,28 +63,32 @@ public class YakuChecker {
         if (isSanshokuDokko(hand)) yaku.add(new YakuResult("삼색동각", 2));
         if (isShousangen(hand)) yaku.add(new YakuResult("소삼원", 2));
         if (isTanyao(hand)) yaku.add(new YakuResult("탕야오", 1));
+        if (isToitoi(hand)) yaku.add(new YakuResult("또이또이", 2));
+        if (isSanankou(hand)) yaku.add(new YakuResult("삼암각", 2));
+        if (isSankantsu(hand)) yaku.add(new YakuResult("산깡즈", 2));
+        if (isHonroto(hand)) yaku.add(new YakuResult("혼노두", 2));
 
         return yaku;
     }
 
-    // ==================== [이하 각 역별 판정 함수 전체 구현] ====================
+    // ==================== [기존 함수들 유지] ====================
 
-    // 리치(멘젠 한정)
     public static boolean isRiichi(HandState hand) {
         return hand.isMenzen && hand.yakuList != null && hand.yakuList.contains("리치");
     }
 
-    // 쯔모(멘젠 한정)
     public static boolean isTsumo(HandState hand) {
         return hand.isMenzen && hand.isTsumo;
     }
 
-    // 일발(멘젠 한정)
     public static boolean isIppatsu(HandState hand) {
         return hand.yakuList != null && hand.yakuList.contains("일발");
     }
 
-    // 핑후(멘젠 한정, 모든 멘츠가 슌츠, 헤드는 역패/자패 아님, 양면 대기)
+    public static boolean isDoubleRiichi(HandState hand) {
+        return hand.yakuList != null && hand.yakuList.contains("더블리치");
+    }
+
     public static boolean isPinfu(HandState hand) {
         if (!hand.isMenzen) return false;
         List<String> tiles = hand.tiles;
@@ -132,80 +139,218 @@ public class YakuChecker {
         return validPinfu;
     }
 
-    // 치또이(멘젠 한정, 7쌍. 자패 포함 가능)
     public static boolean isChitoitsu(HandState hand) {
         if (!hand.isMenzen) return false;
         Map<String, Integer> map = new HashMap<>();
         for (String t : hand.tiles) map.put(t, map.getOrDefault(t, 0) + 1);
-        if (map.size() != 7) return false; // 7쌍이어야 함
+        if (map.size() != 7) return false;
         for (int v : map.values()) {
             if (v != 2) return false;
         }
         return true;
     }
 
-
-    // 량페코(멘젠 한정, 자패 포함 시 무효!)
-    public static boolean isRyanpeko(HandState hand) {
+    /**
+     * 이페코 - 같은 순자 2개가 정확히 하나만 있어야 함 (멘젠 한정)
+     * 량페코와 배타적 관계
+     */
+    public static boolean isIipeikou(HandState hand) {
         if (!hand.isMenzen) return false;
 
-        // 자패 있으면 무효
-        for (String t : hand.tiles) if (isHonor(t)) return false;
+        // 량페코가 성립하면 이페코는 무효
+        if (isRyanpeko(hand)) return false;
 
-        // 카운트맵 생성
         Map<String, Integer> counts = new HashMap<>();
-        for (String t : hand.tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
+        for (String t : hand.tiles) {
+            counts.put(t, counts.getOrDefault(t, 0) + 1);
+        }
 
-        // 모든 2장 이상 패를 헤드(짝패)로 잡고 나머지 멘츠 분해 시도
+        // 각 가능한 머리패로 시도
         for (String pair : counts.keySet()) {
             if (counts.get(pair) >= 2) {
                 Map<String, Integer> pool = new HashMap<>(counts);
                 pool.put(pair, pool.get(pair) - 2);
 
-                List<String> melds = new ArrayList<>();
-                if (ryanpekoMeldSearch(pool, 4, melds)) {
-                    // 만들어진 멘츠 리스트에서 동일 슌츠가 2쌍씩 2종류 이상 있으면 true
-                    Map<String, Integer> meldCount = new HashMap<>();
-                    for (String meld : melds) meldCount.put(meld, meldCount.getOrDefault(meld, 0) + 1);
-                    int pairMelds = 0;
-                    for (int v : meldCount.values()) if (v >= 2) pairMelds++;
-                    if (pairMelds >= 2) return true;
+                List<String> foundMelds = new ArrayList<>();
+                if (findAllMelds(pool, foundMelds)) {
+                    // 순자만 확인 (각자는 제외)
+                    Map<String, Integer> shuntsuCount = new HashMap<>();
+                    for (String meld : foundMelds) {
+                        if (isShuntsu(meld)) {
+                            shuntsuCount.put(meld, shuntsuCount.getOrDefault(meld, 0) + 1);
+                        }
+                    }
+
+                    // 정확히 하나의 순자가 2개 있어야 이페코
+                    int duplicateShuntsu = 0;
+                    for (int count : shuntsuCount.values()) {
+                        if (count == 2) duplicateShuntsu++;
+                    }
+
+                    if (duplicateShuntsu == 1) return true;
                 }
             }
         }
         return false;
     }
 
-    // 슌츠만 허용하는 멘츠 분해, 만들어진 슌츠를 melds에 추가
-    private static boolean ryanpekoMeldSearch(Map<String, Integer> pool, int left, List<String> melds) {
-        if (left == 0) {
-            int sum = 0;
-            for (int v : pool.values()) sum += v;
-            return sum == 0;
+    /**
+     * 량페코 - 같은 순자 2개가 2쌍 있어야 함 (멘젠 한정)
+     */
+    public static boolean isRyanpeko(HandState hand) {
+        if (!hand.isMenzen) return false;
+
+        Map<String, Integer> counts = new HashMap<>();
+        for (String t : hand.tiles) {
+            counts.put(t, counts.getOrDefault(t, 0) + 1);
         }
-        for (String suit : Arrays.asList("m", "p", "s")) {
+
+        // 각 가능한 머리패로 시도
+        for (String pair : counts.keySet()) {
+            if (counts.get(pair) >= 2) {
+                Map<String, Integer> pool = new HashMap<>(counts);
+                pool.put(pair, pool.get(pair) - 2);
+
+                List<String> foundMelds = new ArrayList<>();
+                if (findAllMelds(pool, foundMelds)) {
+                    // 순자만 확인 (각자는 제외)
+                    Map<String, Integer> shuntsuCount = new HashMap<>();
+                    for (String meld : foundMelds) {
+                        if (isShuntsu(meld)) {
+                            shuntsuCount.put(meld, shuntsuCount.getOrDefault(meld, 0) + 1);
+                        }
+                    }
+
+                    // 2개 이상의 순자가 각각 2개씩 있어야 량페코
+                    int duplicateShuntsu = 0;
+                    for (int count : shuntsuCount.values()) {
+                        if (count == 2) duplicateShuntsu++;
+                    }
+
+                    if (duplicateShuntsu >= 2) return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 모든 멘츠를 찾는 헬퍼 함수
+     */
+    private static boolean findAllMelds(Map<String, Integer> pool, List<String> melds) {
+        // 남은 패가 없으면 성공
+        boolean hasRemaining = false;
+        for (int count : pool.values()) {
+            if (count > 0) {
+                hasRemaining = true;
+                break;
+            }
+        }
+        if (!hasRemaining) return true;
+
+        // 각자(트리플릿) 먼저 시도
+        for (String tile : pool.keySet()) {
+            if (pool.get(tile) >= 3) {
+                Map<String, Integer> newPool = new HashMap<>(pool);
+                newPool.put(tile, newPool.get(tile) - 3);
+                List<String> newMelds = new ArrayList<>(melds);
+                newMelds.add(tile + tile + tile); // 각자 표시
+                if (findAllMelds(newPool, newMelds)) {
+                    melds.clear();
+                    melds.addAll(newMelds);
+                    return true;
+                }
+            }
+        }
+
+        // 순자 시도
+        for (char suit : new char[]{'m', 'p', 's'}) {
             for (int i = 1; i <= 7; i++) {
-                String a = i + suit, b = (i+1) + suit, c = (i+2) + suit;
-                if (pool.getOrDefault(a, 0) > 0 && pool.getOrDefault(b, 0) > 0 && pool.getOrDefault(c, 0) > 0) {
-                    Map<String, Integer> tmp = new HashMap<>(pool);
-                    tmp.put(a, tmp.get(a) - 1);
-                    tmp.put(b, tmp.get(b) - 1);
-                    tmp.put(c, tmp.get(c) - 1);
-                    List<String> nextMelds = new ArrayList<>(melds);
-                    nextMelds.add(a + b + c); // 멘츠(예: "1m2m3m") 형태로 기록
-                    if (ryanpekoMeldSearch(tmp, left - 1, nextMelds)) {
+                String a = i + String.valueOf(suit);
+                String b = (i + 1) + String.valueOf(suit);
+                String c = (i + 2) + String.valueOf(suit);
+
+                if (pool.getOrDefault(a, 0) >= 1 &&
+                        pool.getOrDefault(b, 0) >= 1 &&
+                        pool.getOrDefault(c, 0) >= 1) {
+
+                    Map<String, Integer> newPool = new HashMap<>(pool);
+                    newPool.put(a, newPool.get(a) - 1);
+                    newPool.put(b, newPool.get(b) - 1);
+                    newPool.put(c, newPool.get(c) - 1);
+                    List<String> newMelds = new ArrayList<>(melds);
+                    newMelds.add(a + b + c); // 순자 표시
+                    if (findAllMelds(newPool, newMelds)) {
                         melds.clear();
-                        melds.addAll(nextMelds);
+                        melds.addAll(newMelds);
                         return true;
                     }
                 }
             }
         }
+
         return false;
     }
 
+    /**
+     * 순자인지 확인하는 헬퍼 함수
+     */
+    private static boolean isShuntsu(String meld) {
+        if (meld.length() != 6) return false; // 3개 패 = 6글자
 
-    // 삼색동순(멘젠 2판, 후로 1판)
+        String first = meld.substring(0, 2);
+        String second = meld.substring(2, 4);
+        String third = meld.substring(4, 6);
+
+        // 같은 수트인지 확인
+        if (!first.substring(1).equals(second.substring(1)) ||
+                !second.substring(1).equals(third.substring(1))) {
+            return false;
+        }
+
+        // 연속된 숫자인지 확인
+        try {
+            int num1 = Integer.parseInt(first.substring(0, 1));
+            int num2 = Integer.parseInt(second.substring(0, 1));
+            int num3 = Integer.parseInt(third.substring(0, 1));
+            return (num2 == num1 + 1) && (num3 == num2 + 1);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    // 삼암각(三暗刻) - 암각 3개
+    public static boolean isSanankou(HandState hand) {
+        Map<String, Integer> counts = new HashMap<>();
+        for (String t : hand.tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
+
+        int ankouCount = 0;
+        for (Map.Entry<String, Integer> entry : counts.entrySet()) {
+            if (entry.getValue() >= 3) {
+                ankouCount++;
+            }
+        }
+        return ankouCount >= 3;
+    }
+
+    // 삼간쓰(三槓子) - 깡 3개
+    public static boolean isSankantsu(HandState hand) {
+        Map<String, Integer> counts = new HashMap<>();
+        for (String t : hand.tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
+
+        int kantsuCount = 0;
+        for (int count : counts.values()) {
+            if (count == 4) kantsuCount++;
+        }
+        return kantsuCount >= 3;
+    }
+
+    // 혼로우토(混老頭) - 1/9/자패로만 + 각자 4개
+    public static boolean isHonroto(HandState hand) {
+        return isHonroutou(hand) && isToitoi(hand);
+    }
+
+    // [기존 함수들 계속...]
     public static boolean isSanshokuDoujun(HandState hand) {
         List<String> man = new ArrayList<>(), pin = new ArrayList<>(), sou = new ArrayList<>();
         for (String t : hand.tiles) {
@@ -225,7 +370,6 @@ public class YakuChecker {
         return false;
     }
 
-    // 일기통관(멘젠 2판, 후로 1판)
     public static boolean isIkkitsuukan(HandState hand) {
         for (char suit : new char[]{'m', 'p', 's'}) {
             boolean[] found = new boolean[10];
@@ -243,15 +387,10 @@ public class YakuChecker {
         return false;
     }
 
-
-    // --- 준찬타: 모든 멘츠/또이츠가 1,9만. 자패 있으면 불가. ---
     public static boolean isJunchanMeldSearch(List<String> tiles) {
-        // 1. 자패 있으면 무조건 false
         for (String t : tiles) if (isHonor(t)) return false;
-        // 2. 카운트맵 생성
         Map<String, Integer> counts = new HashMap<>();
         for (String t : tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
-        // 3. 모든 1,9 패에 대해 또이츠(짝패)로 잡고 나머지 12장 4멘츠 분해 시도
         for (String pair : counts.keySet()) {
             if (!isTerminal(pair)) continue;
             if (counts.get(pair) >= 2) {
@@ -262,13 +401,13 @@ public class YakuChecker {
         }
         return false;
     }
+
     private static boolean isJunchanMelds(Map<String, Integer> pool, int left) {
         if (left == 0) {
             int sum = 0;
             for (int v : pool.values()) sum += v;
             return sum == 0;
         }
-        // 코츠(1,9만)
         for (String t : pool.keySet()) {
             if (!isTerminal(t)) continue;
             if (pool.get(t) >= 3) {
@@ -277,7 +416,6 @@ public class YakuChecker {
                 if (isJunchanMelds(tmp, left - 1)) return true;
             }
         }
-        // 슌츠(1,2,3 or 7,8,9만 허용)
         for (String suit : Arrays.asList("m", "p", "s")) {
             for (int i : Arrays.asList(1,7)) {
                 String a = i + suit, b = (i+1) + suit, c = (i+2) + suit;
@@ -292,20 +430,10 @@ public class YakuChecker {
         }
         return false;
     }
-    private static boolean isTerminal(String t) {
-        return t.length() == 2 && (t.charAt(0) == '1' || t.charAt(0) == '9');
-    }
-    private static boolean isHonor(String t) {
-        return t.equals("E") || t.equals("S") || t.equals("W") || t.equals("N")
-                || t.equals("P") || t.equals("F") || t.equals("C");
-    }
 
-    // --- 찬타: 모든 멘츠/또이츠가 반드시 1,9,자패 포함. ---
     public static boolean isChantaMeldSearch(List<String> tiles) {
-        // 카운트맵 생성
         Map<String, Integer> counts = new HashMap<>();
         for (String t : tiles) counts.put(t, counts.getOrDefault(t, 0) + 1);
-        // 모든 패에 대해 또이츠(짝패)로 잡고 나머지 12장 4멘츠 분해 시도
         for (String pair : counts.keySet()) {
             if (counts.get(pair) >= 2) {
                 Map<String, Integer> tmp = new HashMap<>(counts);
@@ -315,13 +443,13 @@ public class YakuChecker {
         }
         return false;
     }
+
     private static boolean isChantaMelds(Map<String, Integer> pool, int left) {
         if (left == 0) {
             int sum = 0;
             for (int v : pool.values()) sum += v;
             return sum == 0;
         }
-        // 코츠(3동패, 반드시 1,9,자패 포함)
         for (String t : pool.keySet()) {
             if (pool.get(t) >= 3 && isYaochu(t)) {
                 Map<String, Integer> tmp = new HashMap<>(pool);
@@ -329,12 +457,10 @@ public class YakuChecker {
                 if (isChantaMelds(tmp, left - 1)) return true;
             }
         }
-        // 슌츠(3연속, 반드시 1,9 포함)
         for (String suit : Arrays.asList("m", "p", "s")) {
             for (int i = 1; i <= 7; i++) {
                 String a = i + suit, b = (i+1) + suit, c = (i+2) + suit;
                 if (pool.getOrDefault(a,0)>0 && pool.getOrDefault(b,0)>0 && pool.getOrDefault(c,0)>0) {
-                    // 이 셋에 1,9가 하나라도 포함되어야 함
                     if (!(a.startsWith("1")||b.startsWith("1")||c.startsWith("1")||
                             a.startsWith("9")||b.startsWith("9")||c.startsWith("9")||
                             isHonor(a)||isHonor(b)||isHonor(c))) continue;
@@ -348,13 +474,7 @@ public class YakuChecker {
         }
         return false;
     }
-    private static boolean isYaochu(String t) {
-        return isHonor(t) ||
-                (t.length() == 2 && (t.charAt(0) == '1' || t.charAt(0) == '9'));
-    }
 
-
-    // 청일색(멘젠 6판, 후로 5판)
     public static boolean isChinitsu(HandState hand) {
         char suit = 0;
         for (String t : hand.tiles) {
@@ -368,7 +488,6 @@ public class YakuChecker {
         return suit != 0;
     }
 
-    // 혼일색(멘젠 3판, 후로 2판)
     public static boolean isHonitsu(HandState hand) {
         boolean hasSuit = false, hasHonor = false;
         char suit = 0;
@@ -384,7 +503,6 @@ public class YakuChecker {
         return hasSuit && hasHonor;
     }
 
-    // 혼노두(2판, 멘젠/후로 동일, 1/9/자패로만)
     public static boolean isHonroutou(HandState hand) {
         for (String t : hand.tiles) {
             if (t.endsWith("m") || t.endsWith("p") || t.endsWith("s")) {
@@ -397,7 +515,6 @@ public class YakuChecker {
         return true;
     }
 
-    // 탕야오(무조건 1판)
     public static boolean isTanyao(HandState hand) {
         for (String t : hand.tiles) {
             if (t.endsWith("m") || t.endsWith("p") || t.endsWith("s")) {
@@ -410,7 +527,6 @@ public class YakuChecker {
         return true;
     }
 
-    // 삼색동각(무조건 2판)
     public static boolean isSanshokuDokko(HandState hand) {
         int[][] count = new int[3][10];
         for (String t : hand.tiles) {
@@ -425,7 +541,27 @@ public class YakuChecker {
         return false;
     }
 
-    // 역패(무조건 1판, 자패 3개 이상)
+    public static boolean isToitoi(HandState hand) {
+        Map<String, Integer> count = new HashMap<>();
+        for (String t : hand.tiles) {
+            count.put(t, count.getOrDefault(t, 0) + 1);
+        }
+
+        int pair = 0;
+        int set = 0;
+
+        for (int c : count.values()) {
+            if (c == 2) {
+                pair++;
+            } else if (c == 3 || c == 4) {
+                set++;
+            } else {
+                return false;
+            }
+        }
+        return pair == 1 && set == 4;
+    }
+
     public static boolean isYakuhai(HandState hand) {
         Map<String, Integer> counts = new HashMap<>();
         for (String t : hand.tiles) {
@@ -437,7 +573,6 @@ public class YakuChecker {
         return false;
     }
 
-    // 소삼원(백/발/중 중 2개는 퐁, 1개는 또이츠)
     public static boolean isShousangen(HandState hand) {
         int P = 0, F = 0, C = 0;
         for (String t : hand.tiles) {
@@ -450,5 +585,19 @@ public class YakuChecker {
         if (F == 2) pair++; else if (F == 3) pon++;
         if (C == 2) pair++; else if (C == 3) pon++;
         return (pon == 2 && pair == 1);
+    }
+
+    // 헬퍼 함수들
+    private static boolean isTerminal(String t) {
+        return t.length() == 2 && (t.charAt(0) == '1' || t.charAt(0) == '9');
+    }
+
+    private static boolean isHonor(String t) {
+        return t.equals("E") || t.equals("S") || t.equals("W") || t.equals("N")
+                || t.equals("P") || t.equals("F") || t.equals("C");
+    }
+
+    private static boolean isYaochu(String t) {
+        return isHonor(t) || (t.length() == 2 && (t.charAt(0) == '1' || t.charAt(0) == '9'));
     }
 }
