@@ -73,17 +73,14 @@
 
 ## 📱 스크린샷 スクリーンショット Screenshots
 
-![첫번째 화면 / 1st Screen](https://github.com/user-attachments/assets/e314112c-921c-4d30-925c-ec798d6ff4ca)
-
-첫번째 화면 / 1st Screen
-
-![두번째 화면 / 2nd Screen](https://github.com/user-attachments/assets/6743db1b-d60b-4119-8c46-ab023e467b02)
-
-두번째 화면 / 2nd Screen
-
-![세번째 화면 / 3rd Screen](https://github.com/user-attachments/assets/4846ab78-4b09-4452-bc08-07b71ce83427)
-
-세번째 화면 / 3rd Screen
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e314112c-921c-4d30-925c-ec798d6ff4ca" width="250" alt="첫번째 화면" />
+  첫번째 화면 / 1st Screen
+  <img src="https://github.com/user-attachments/assets/6743db1b-d60b-4119-8c46-ab023e467b02" width="250" alt="두번째 화면" />
+  두번째 화면 / 2nd Screen
+  <img src="https://github.com/user-attachments/assets/4846ab78-4b09-4452-bc08-07b71ce83427" width="250" alt="세번째 화면" />
+  세번째 화면 / 3rd Screen
+</p>
 
 ---
 
