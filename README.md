@@ -71,11 +71,16 @@
 
 ---
 
-## 📱 スクリーンショット (Screenshots)  
+## 📱 스크린샷 スクリーンショット Screenshots
 
-![마작 1번째 화면](https://github.com/user-attachments/assets/6be0427c-0e82-43a1-a52d-4e2693ef33df)
-![마작 2번째 화면](https://github.com/user-attachments/assets/172fb5d0-5c12-4490-a760-5d94142828a5)
-![마작 3번째 화면](https://github.com/user-attachments/assets/27fc6cbb-4a08-480c-a119-f7c31dd916bf)
+<p align="center">
+  <img src="![마작 1번째 화면](https://github.com/user-attachments/assets/4846ab78-4b09-4452-bc08-07b71ce83427)
+" width="250" />
+  <img src="![마작 2번째 화면](https://github.com/user-attachments/assets/6743db1b-d60b-4119-8c46-ab023e467b02)
+" width="250" />
+  <img src="![마작 3번째 화면](https://github.com/user-attachments/assets/e314112c-921c-4d30-925c-ec798d6ff4ca)
+" width="250" />
+</p>
 
 ---
 
