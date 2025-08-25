@@ -10,7 +10,7 @@
 
 ---
 
-## ✨ 主要機能 (Features / 주요 기능 / Features)  
+## ✨ 主要機能 (주요 기능 / Features)  
 - **日本語**:  
   - 手牌入力による自動点数計算  
   - 符計算と翻数計算を含む詳細な点数算出  
@@ -84,7 +84,7 @@
 
 ---
 
-## 📱 スクリーンショット  ( 스크린 샷 / Screenshots )
+## 📱 スクリーンショット  (스크린 샷 / Screenshots)
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e314112c-921c-4d30-925c-ec798d6ff4ca" width="250" alt="첫번째 화면" />
