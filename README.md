@@ -31,10 +31,19 @@
 
 ---
 
-## 🛠 使用技術 (Tech Stack / 사용 기술 / Tech Stack)  
-- **開発環境 / 개발 환경 / Development Environment**: Android Studio, Fork  
-- **プログラミング言語 / 언어 / Language**: Java  
-- **その他 / 기타 / Others**: Android SDK, XML UI Layout  
+## 🛠 사용 기술 / 使用技術 / Tech Stack
+
+- **개발 환경 / 開発環境 / Development Environment**: Android Studio
+- **프로그래밍 언어 / プログラミング言語 / Language**: Java
+- **Android SDK 버전 / Android SDK バージョン / Android SDK Version**:
+  - Compile SDK Version: 35 (Android 13.0)
+  - Target SDK Version: 35 (Android 13.0)
+  - Minimum SDK Version: 24 (Android 7.0, Nougat)
+- **UI 레이아웃 / UI レイアウト / UI Layout**:
+  - XML Layout 사용
+  - ConstraintLayout, LinearLayout 등 최신 레이아웃 컴포넌트 지원
+- **기타 / その他 / Others**: AndroidX 라이브러리, Gradle 빌드 시스템
+
 
 ---
 
