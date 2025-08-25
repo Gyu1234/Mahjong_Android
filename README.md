@@ -72,10 +72,10 @@
 ---
 
 ## 📱 スクリーンショット (Screenshots)  
->  
-> ```markdown
-> ![screenshot](.)
-> ```
+
+![마작 1번째 화면](https://github.com/user-attachments/assets/6be0427c-0e82-43a1-a52d-4e2693ef33df)
+![마작 2번째 화면](https://github.com/user-attachments/assets/172fb5d0-5c12-4490-a760-5d94142828a5)
+![마작 3번째 화면](https://github.com/user-attachments/assets/27fc6cbb-4a08-480c-a119-f7c31dd916bf)
 
 ---
 
