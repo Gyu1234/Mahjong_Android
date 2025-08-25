@@ -32,7 +32,7 @@
 ---
 
 ## 🛠 使用技術 (Tech Stack / 사용 기술 / Tech Stack)  
-- **開発環境 / 개발 환경 / Development Environment**: Android Studio  
+- **開発環境 / 개발 환경 / Development Environment**: Android Studio, Fork  
 - **プログラミング言語 / 언어 / Language**: Java  
 - **その他 / 기타 / Others**: Android SDK, XML UI Layout  
 
@@ -74,13 +74,11 @@
 ## 📱 스크린샷 スクリーンショット Screenshots
 
 <p align="center">
-  <img src="![마작 1번째 화면](https://github.com/user-attachments/assets/4846ab78-4b09-4452-bc08-07b71ce83427)
-" width="250" />
-  <img src="![마작 2번째 화면](https://github.com/user-attachments/assets/6743db1b-d60b-4119-8c46-ab023e467b02)
-" width="250" />
-  <img src="![마작 3번째 화면](https://github.com/user-attachments/assets/e314112c-921c-4d30-925c-ec798d6ff4ca)
-" width="250" />
+  <img src="https://github.com/user-attachments/assets/4846ab78-4b09-4452-bc08-07b71ce83427" width="250" />
+  <img src="https://github.com/user-attachments/assets/6743db1b-d60b-4119-8c46-ab023e467b02" width="250" />
+  <img src="https://github.com/user-attachments/assets/e314112c-921c-4d30-925c-ec798d6ff4ca" width="250" />
 </p>
+
 
 ---
 
