@@ -131,7 +131,8 @@
 ---
 
 ## 👤 開発者 (Developer / 개발자 / Developer)  
-- **GitHub**: [Gyu1234](https://github.com/Gyu1234), [shm8052](https://github.com/shm8052),[jws1212jws](https://github.com/jws1212jws)
-- **役割 / 역할 / Role**: Androidアプリ開発、点数計算ロジック設計 / Android App Development & Score Calculation Logic  [Gyu1234](https://github.com/Gyu1234)
-
----
+- **GitHub**: [Gyu1234](https://github.com/Gyu1234), [shm8052](https://github.com/shm8052), [jws1212jws](https://github.com/jws1212jws)  
+- **役割 / 역할 / Role**:  
+  - [Gyu1234](https://github.com/Gyu1234) : Androidアプリ開発、点数計算ロジック設計 / Android App Development & Score Calculation Logic  
+  - [shm8052](https://github.com/shm8052) : アプリ構造設計 / App Architecture Design  
+  - [jws1212jws](https://github.com/jws1212jws) : 牌スタイル入力機能設計 / Tile Style Input Feature Design  
