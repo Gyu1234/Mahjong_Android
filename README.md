@@ -107,7 +107,7 @@
 
 - **役割 / Role**:  
   - [Gyu1234](https://github.com/Gyu1234) :  
-    アプリケーション構造設計、役判定ロジック設計、Androidアプリ開発、事後管理  
+    アプリケーション構造設計、役判定ロジック設計、Androidアプリ開発、運用保守  
     (Application Architecture Design, Yaku Judgment Logic Design, Android App Development, Post-maintenance)  
 
   - [shm8052](https://github.com/shm8052) :  
